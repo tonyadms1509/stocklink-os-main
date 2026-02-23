@@ -2,47 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StockLink ✅</title>
-  <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
-
-    // Supabase setup
-    const supabaseUrl = "https://skptdtrduxzcijitemty.supabase.co"
-    const supabaseKey = "YOUR_ANON_KEY"   // replace with your anon key from Supabase
-    const supabase = createClient(supabaseUrl, supabaseKey)
-
-    // Waitlist form
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.querySelector("#waitlistForm")
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault()
-        const email = document.querySelector("#email").value
-        const { error } = await supabase.from("waitlist").insert([{ email }])
-        if (error) {
-          alert("Error: " + error.message)
-        } else {
-          alert("You’ve joined the waitlist!")
-        }
-      })
-    })
-
-    // Signup/Login
-    async function signup() {
-      const email = document.querySelector("#signupEmail").value
-      const password = document.querySelector("#signupPassword").value
-      const { error } = await supabase.auth.signUp({ email, password })
-      if (error) alert("Signup error: " + error.message)
-      else alert("Signup successful! Check your email for confirmation.")
-    }
-
-    async function login() {
-      const email = document.querySelector("#loginEmail").value
-      const password = document.querySelector("#loginPassword").value
-      const { error } = await supabase.auth.signInWithPassword({ email, password })
-      if (error) alert("Login error: " + error.message)
-      else alert("Login successful!")
-    }
-  </script>
+  <title>StockLink Ferrari</title>
 </head>
 <body>
   <h1>Welcome to StockLink ✅</h1>
@@ -50,67 +10,102 @@
 
   <!-- Waitlist -->
   <h2>Join the Waitlist</h2>
-  <form id="waitlistForm">
-    <input type="email" id="email" placeholder="Enter your email" required>
-    <button type="submit">Join Waitlist</button>
-  </form>
+  <input type="email" id="waitlistEmail" placeholder="Enter your email">
+  <button onclick="joinWaitlist()">Join Waitlist</button>
 
-  <!-- Signup/Login -->
+  <!-- Sign Up -->
   <h2>Create Account</h2>
   <input type="email" id="signupEmail" placeholder="Email">
   <input type="password" id="signupPassword" placeholder="Password">
   <button onclick="signup()">Sign Up</button>
 
+  <!-- Login -->
   <h2>Login</h2>
   <input type="email" id="loginEmail" placeholder="Email">
   <input type="password" id="loginPassword" placeholder="Password">
+
+  <!-- Role selector -->
+  <select id="roleSelect">
+    <option value="contractor">Contractor</option>
+    <option value="supplier">Supplier</option>
+    <option value="logistics">Logistics</option>
+    <option value="admin">Admin</option>
+  </select>
+
   <button onclick="login()">Login</button>
 
-  <!-- Subscription Buttons -->
+  <!-- Client Subscriptions (info only for now) -->
   <h2>Client Subscriptions</h2>
-  <div>
-    <h3>👷 Contractor Plan — R199/month</h3>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick-subscriptions">
-      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
-      <input type="hidden" name="item_name" value="Contractor Plan">
-      <input type="hidden" name="a3" value="199">
-      <input type="hidden" name="p3" value="1">
-      <input type="hidden" name="t3" value="M">
-      <input type="hidden" name="currency_code" value="ZAR">
-      <button type="submit">Subscribe with PayPal</button>
-    </form>
-    <button onclick="window.open('https://paystack.com/pay/YOUR_CONTRACTOR_LINK','_blank')">Subscribe with Paystack</button>
-  </div>
+  <p>👷 Contractor Plan — R199/month</p>
+  <p>🚚 Logistics Plan — R399/month</p>
+  <p>🏭 Supplier Plan — R499/month</p>
+  <p><em>Subscription payments coming soon. For now, register and explore the app.</em></p>
 
-  <div>
-    <h3>🚚 Logistics Plan — R399/month</h3>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick-subscriptions">
-      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
-      <input type="hidden" name="item_name" value="Logistics Plan">
-      <input type="hidden" name="a3" value="399">
-      <input type="hidden" name="p3" value="1">
-      <input type="hidden" name="t3" value="M">
-      <input type="hidden" name="currency_code" value="ZAR">
-      <button type="submit">Subscribe with PayPal</button>
-    </form>
-    <button onclick="window.open('https://paystack.com/pay/YOUR_LOGISTICS_LINK','_blank')">Subscribe with Paystack</button>
-  </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="contractor.html">Contractor</a> |
+    <a href="supplier.html">Supplier</a> |
+    <a href="logistics.html">Logistics</a> |
+    <a href="admin.html">Admin</a>
+  </nav>
 
-  <div>
-    <h3>🏭 Supplier Plan — R499/month</h3>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick-subscriptions">
-      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
-      <input type="hidden" name="item_name" value="Supplier Plan">
-      <input type="hidden" name="a3" value="499">
-      <input type="hidden" name="p3" value="1">
-      <input type="hidden" name="t3" value="M">
-      <input type="hidden" name="currency_code" value="ZAR">
-      <button type="submit">Subscribe with PayPal</button>
-    </form>
-    <button onclick="window.open('https://paystack.com/pay/YOUR_SUPPLIER_LINK','_blank')">Subscribe with Paystack</button>
-  </div>
+  <!-- Supabase Script -->
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+
+    const supabaseUrl = "https://skptdtrduxzcijitemty.supabase.co"
+    const supabaseKey = "YOUR_ANON_KEY"   // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkaXdmZmVjZHRjam9keGxtdmp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5NjI0NjcsImV4cCI6MjA4MTUzODQ2N30.zRBiACPJfc0fkvBs6eYEbVkMjk8Yko3vzlvCGWTFT
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    // Waitlist
+    async function joinWaitlist() {
+      const email = document.querySelector("#waitlistEmail").value
+      const { error } = await supabase.from("waitlist").insert([{ email }])
+      if (error) {
+        alert("Error: " + error.message)
+      } else {
+        alert("You’ve joined the waitlist!")
+      }
+    }
+
+    // Signup
+    async function signup() {
+      const email = document.querySelector("#signupEmail").value
+      const password = document.querySelector("#signupPassword").value
+      const { error } = await supabase.auth.signUp({ email, password })
+      if (error) {
+        alert("Signup error: " + error.message)
+      } else {
+        alert("Signup successful! Please check your email to confirm.")
+      }
+    }
+
+    // Login with role-based redirect
+    async function login() {
+      const email = document.querySelector("#loginEmail").value
+      const password = document.querySelector("#loginPassword").value
+      const role = document.querySelector("#roleSelect").value
+
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+
+      if (error) {
+        alert("Login error: " + error.message)
+      } else {
+        alert("Login successful! Redirecting to your dashboard...")
+
+        if (role === "contractor") {
+          window.location.href = "contractor.html"
+        } else if (role === "supplier") {
+          window.location.href = "supplier.html"
+        } else if (role === "logistics") {
+          window.location.href = "logistics.html"
+        } else if (role === "admin") {
+          window.location.href = "admin.html"
+        } else {
+          window.location.href = "index.html"
+        }
+      }
+    }
+  </script>
 </body>
 </html>
