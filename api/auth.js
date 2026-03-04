@@ -1,15 +1,23 @@
+// /api/auth.js
 import { createClient } from "@supabase/supabase-js";
+
+// Top-level log to confirm file loads
+console.log("Auth function file loaded");
 
 export default async function handler(req, res) {
   // Diagnostic logging
   console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
   console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY ? "Loaded" : "Missing");
 
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_KEY;
+
+  if (!url || !key) {
+    return res.status(500).json({ error: "Supabase environment variables missing" });
+  }
+
   // Initialize Supabase client
-  const supabase = createClient(
-    process.env.SUPABASE_URL || "",
-    process.env.SUPABASE_KEY || ""
-  );
+  const supabase = createClient(url, key);
 
   if (req.method === "POST") {
     try {
