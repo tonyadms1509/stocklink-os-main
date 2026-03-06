@@ -1,4 +1,6 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+function Home() {
   return (
     <div style={{ fontFamily: "Arial, sans-serif" }}>
       <section style={{
@@ -12,25 +14,29 @@ function App() {
           Seamless, Secure, Credible — Trust First
         </p>
         <div>
-          <button style={{
-            marginRight: "15px",
-            padding: "12px 24px",
-            fontSize: "1rem",
-            borderRadius: "5px",
-            border: "none",
-            backgroundColor: "#ff4b2b",
-            color: "white",
-            cursor: "pointer"
-          }}>Login</button>
-          <button style={{
-            padding: "12px 24px",
-            fontSize: "1rem",
-            borderRadius: "5px",
-            border: "none",
-            backgroundColor: "#4CAF50",
-            color: "white",
-            cursor: "pointer"
-          }}>Learn More</button>
+          <Link to="/login">
+            <button style={{
+              marginRight: "15px",
+              padding: "12px 24px",
+              fontSize: "1rem",
+              borderRadius: "5px",
+              border: "none",
+              backgroundColor: "#ff4b2b",
+              color: "white",
+              cursor: "pointer"
+            }}>Login</button>
+          </Link>
+          <Link to="/about">
+            <button style={{
+              padding: "12px 24px",
+              fontSize: "1rem",
+              borderRadius: "5px",
+              border: "none",
+              backgroundColor: "#4CAF50",
+              color: "white",
+              cursor: "pointer"
+            }}>Learn More</button>
+          </Link>
         </div>
       </section>
 
@@ -53,6 +59,42 @@ function App() {
         © 2026 StockLink Ferrari | Contact | About
       </footer>
     </div>
+  );
+}
+
+function Login() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Login to StockLink Ferrari</h2>
+      <form style={{ display: "inline-block", marginTop: "20px" }}>
+        <input type="text" placeholder="Username" style={{ display: "block", margin: "10px auto", padding: "10px" }} />
+        <input type="password" placeholder="Password" style={{ display: "block", margin: "10px auto", padding: "10px" }} />
+        <button style={{ padding: "10px 20px", backgroundColor: "#ff4b2b", color: "white", border: "none", borderRadius: "5px" }}>
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>About StockLink Ferrari</h2>
+      <p>StockLink Ferrari is built for seamless authentication, transparent dashboards, and credible payouts.</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
