@@ -12,11 +12,50 @@ function NavBar() {
 
 function Home() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>🚀 StockLink Ferrari</h1>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      {/* Banner Section */}
+      <div style={{
+        backgroundColor: "#004aad",
+        color: "white",
+        textAlign: "center",
+        padding: "12px",
+        fontSize: "18px",
+        fontWeight: "bold",
+        marginBottom: "20px"
+      }}>
+        StockLinkSA | Verified & Expanding
+      </div>
+
+      {/* Logo + Tagline Section */}
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <img src="logo.png" alt="StockLinkSA Logo" style={{ height: "60px" }} />
+        <p style={{
+          fontSize: "16px",
+          color: "#004aad",
+          fontWeight: "bold",
+          marginTop: "8px"
+        }}>
+          South Africa & Global — Growing Together
+        </p>
+      </div>
+
+      {/* Main Content */}
+      <h1 style={{ marginTop: "30px" }}>🚀 Welcome to StockLinkSA</h1>
       <p>Seamless, Secure, Credible — Trust First</p>
       <Link to="/login"><button>Login</button></Link>
       <Link to="/about"><button>Learn More</button></Link>
+
+      {/* Footer Section */}
+      <footer style={{
+        backgroundColor: "#f5f5f5",
+        color: "#333",
+        textAlign: "center",
+        padding: "8px",
+        fontSize: "14px",
+        marginTop: "40px"
+      }}>
+        Last updated: March 2026 | Referral payouts demo coming soon
+      </footer>
     </div>
   );
 }
@@ -34,7 +73,7 @@ function Login() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login to StockLink Ferrari</h2>
+      <h2>Login to StockLinkSA</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" />
         <input type="password" name="password" placeholder="Password" />
@@ -51,7 +90,7 @@ function Login() {
 }
 
 function About() {
-  return <h2 style={{ textAlign: "center", marginTop: "50px" }}>About StockLink Ferrari</h2>;
+  return <h2 style={{ textAlign: "center", marginTop: "50px" }}>About StockLinkSA</h2>;
 }
 
 function Contractor() { return <h2 style={{ textAlign: "center", marginTop: "50px" }}>Contractor Dashboard</h2>; }
@@ -77,3 +116,4 @@ function App() {
 }
 
 export default App;
+
