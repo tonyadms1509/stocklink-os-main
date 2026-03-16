@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Supplier from "./pages/Supplier";
 import Contractor from "./pages/Contractor";
-import Landing from "./pages/Landing";
+import LandingPage from "./pages/LandingPage";
+
 import Admin from "./pages/Admin";
 import Signup from "./pages/Signup";
 import "./index.css";
