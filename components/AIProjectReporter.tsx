@@ -52,7 +52,7 @@ const AIProjectReporter: React.FC<AIProjectReporterProps> = ({ project }) => {
 
         try {
             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-            const systemInstruction = `You are a professional project manager using StockLink Ferrari. 
+            const systemInstruction = `You are a professional project manager using StockLink StockLink OS. 
             Report type: "${reportType}".
             
             - If "Client Update": Summarize progress for the homeowner in a clear, positive way.

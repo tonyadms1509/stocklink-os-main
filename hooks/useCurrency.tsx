@@ -9,7 +9,7 @@ interface CurrencyContextState {
 }
 
 const CurrencyContext = createContext<CurrencyContextState | undefined>(undefined);
-const CURRENCY_STORAGE_KEY = 'stocklink_ferrari_currency_v110';
+const CURRENCY_STORAGE_KEY = 'stocklink_StockLink OS_currency_v110';
 
 export const CurrencyProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [currency, setCurrencyState] = useState<Currency>(() => {

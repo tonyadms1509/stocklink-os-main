@@ -19,7 +19,7 @@ const PlanAnnotatorModal: React.FC<PlanAnnotatorModalProps> = ({ imageUrl, fileN
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [tool, setTool] = useState<'pen' | 'eraser' | 'stamp'>('pen');
-    const [color, setColor] = useState('#DC0000'); // Ferrari Red
+    const [color, setColor] = useState('#DC0000'); // StockLink OS Red
     const [history, setHistory] = useState<ImageData[]>([]);
     
     useEffect(() => {

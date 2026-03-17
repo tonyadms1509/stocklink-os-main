@@ -113,7 +113,7 @@ const VehicleInspectionModal: React.FC<VehicleInspectionModalProps> = ({ onClose
                     )}
                     <div className="mt-6 flex items-center justify-center gap-2 opacity-30">
                         <BoltIcon className="h-3 w-3 text-red-500"/>
-                        <span className="text-[8px] font-black uppercase tracking-widest">Ferrari Protocol Sync v80.5</span>
+                        <span className="text-[8px] font-black uppercase tracking-widest">StockLink OS Protocol Sync v80.5</span>
                     </div>
                 </div>
             </div>

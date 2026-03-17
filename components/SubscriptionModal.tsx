@@ -110,7 +110,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ onSubscribe }) =>
         </div>
       </div>
       
-      {/* Decorative Ferrari Elements */}
+      {/* Decorative StockLink OS Elements */}
       <div className="fixed bottom-10 left-10 pointer-events-none opacity-5 rotate-90">
           <span className="text-[140px] font-black tracking-tighter text-white uppercase">ACTIVATION</span>
       </div>

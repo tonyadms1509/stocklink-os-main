@@ -56,13 +56,13 @@ const LaunchCelebration: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse delay-75"></div>
                              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse delay-150"></div>
                         </div>
-                        <p className="mt-8 text-slate-500 font-black uppercase tracking-[0.5em] text-sm">StockLink Ferrari Production v62.2 Active</p>
+                        <p className="mt-8 text-slate-500 font-black uppercase tracking-[0.5em] text-sm">StockLink StockLink OS Production v62.2 Active</p>
                     </div>
                 )}
             </div>
 
             <div className="absolute bottom-10 font-mono text-xs text-slate-800 tracking-widest uppercase">
-                Terminal Auth Key: FERRARI_G7_PRODUCTION_ZA
+                Terminal Auth Key: StockLink OS_G7_PRODUCTION_ZA
             </div>
         </div>,
         document.body

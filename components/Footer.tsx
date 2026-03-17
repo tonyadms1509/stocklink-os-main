@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                     <div className="md:col-span-5 space-y-6">
                         <div className="flex items-center gap-3">
                             <Logo className="h-10 w-auto text-red-600" />
-                            <span className="text-2xl font-black italic uppercase tracking-tighter text-white">StockLink <span className="text-red-600">Ferrari</span></span>
+                            <span className="text-2xl font-black italic uppercase tracking-tighter text-white">StockLink <span className="text-red-600">StockLink OS</span></span>
                         </div>
                         <p className="text-sm leading-relaxed max-w-sm font-medium">
                             The high-performance operating system for the South African construction industry. 

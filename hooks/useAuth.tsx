@@ -18,7 +18,7 @@ interface AuthContextState {
 }
 
 const AuthContext = createContext<AuthContextState | undefined>(undefined);
-const USER_SESSION_KEY = 'stocklink_ferrari_master_session_v110';
+const USER_SESSION_KEY = 'stocklink_StockLink OS_master_session_v110';
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [initialData] = useState(() => {
@@ -47,16 +47,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         name: 'Fleet Commander',
         email: 'elite@stocklink.io',
         role: role,
-        activeCompanyId: 'comp-777-ferrari',
-        company: 'Ferrari Redline Construction',
+        activeCompanyId: 'comp-777-StockLink OS',
+        company: 'StockLink OS Redline Construction',
         subscriptionStatus: 'active',
         walletBalance: 142500,
         verificationStatus: 'verified'
     };
 
     const masterCompany = hydrateCompany({
-        id: 'comp-777-ferrari',
-        name: 'Ferrari Redline Construction',
+        id: 'comp-777-StockLink OS',
+        name: 'StockLink OS Redline Construction',
         type: role === UserRole.Admin ? 'admin' : (role === UserRole.Logistics ? 'logistics' : role as any),
         ownerId: 'user-master-777',
         subscriptionStatus: 'active',
@@ -65,8 +65,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         coordinates: { lat: -26.1076, lon: 28.0567 },
         contact: {
             phone: '+27 11 555 0123',
-            email: 'ops@ferrari-redline.co.za',
-            website: 'www.ferrari-redline.co.za',
+            email: 'ops@StockLink OS-redline.co.za',
+            website: 'www.StockLink OS-redline.co.za',
             whatsapp: '27115550123'
         },
         businessHours: { weekdays: '07:00 - 18:00', saturday: '08:00 - 14:00', sunday: 'Closed' }
@@ -81,7 +81,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, password: string): Promise<string | null> => {
     const pwd = password.toLowerCase();
-    if (pwd === 'ferrari' || pwd === 'demo') {
+    if (pwd === 'StockLink OS' || pwd === 'demo') {
         let role = UserRole.Contractor;
         if (email.includes('admin')) role = UserRole.Admin;
         else if (email.includes('supplier')) role = UserRole.Supplier;
