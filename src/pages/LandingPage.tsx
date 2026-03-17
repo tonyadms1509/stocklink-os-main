@@ -1,28 +1,28 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LandingPage.css'; // optional styling
+import { Link } from 'react-router-dom';
 
-const LandingPage: React.FC = () => {
-  const navigate = useNavigate();
-
+export default function LandingPage() {
   return (
-    <div className="landing-container">
-      <header>
-        <h1>🚀 Welcome to StockLink OS</h1>
-        <p>Your unified dashboard for contractors, suppliers, and logistics.</p>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      {/* Welcome Banner */}
+      <h1 style={{ color: '#203a43' }}>Welcome to StockLink OS</h1>
+      <p style={{ fontSize: '18px', marginTop: '10px' }}>
+        Streamlined dashboards for Admin, Contractor, Supplier, Logistics, and Driver.
+      </p>
 
-      <div className="role-buttons">
-        <button onClick={() => navigate('/contractor')}>Contractors</button>
-        <button onClick={() => navigate('/supplier')}>Suppliers</button>
-        <button onClick={() => navigate('/logistics')}>Logistics</button>
+      {/* Quick Links */}
+      <div style={{ marginTop: '30px' }}>
+        <Link to="/admin" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Admin Dashboard</Link>
+        <Link to="/contractor" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Contractor Dashboard</Link>
+        <Link to="/supplier" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Supplier Dashboard</Link>
+        <Link to="/logistics" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Logistics Dashboard</Link>
+        <Link to="/driver" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Driver Dashboard</Link>
       </div>
 
-      <footer>
-        <p>© 2026 StockLink OS. All rights reserved.</p>
+      {/* Footer */}
+      <footer style={{ marginTop: '50px', fontSize: '14px', color: '#555' }}>
+        © 2026 StockLink OS — Empowering seamless operations
       </footer>
     </div>
   );
-};
-
-export default LandingPage;
+}
