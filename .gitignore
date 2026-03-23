@@ -1,6 +1,8 @@
 
 node_modules
 dist
+!dist/_redirects
+
 .env
 .env.local
 .env.development.local

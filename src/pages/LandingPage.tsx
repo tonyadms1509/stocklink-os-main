@@ -1,28 +1,75 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+  datasets: [
+    {
+      label: "Admin",
+      data: [40, 55, 60, 70, 85],
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      tension: 0.3,
+    },
+    {
+      label: "Contractor",
+      data: [30, 45, 50, 65, 80],
+      borderColor: "rgb(54, 162, 235)",
+      backgroundColor: "rgba(54, 162, 235, 0.2)",
+      tension: 0.3,
+    },
+    {
+      label: "Supplier",
+      data: [20, 35, 40, 55, 70],
+      borderColor: "rgb(75, 192, 192)",
+      backgroundColor: "rgba(75, 192, 192, 0.2)",
+      tension: 0.3,
+    },
+    {
+      label: "Logistics",
+      data: [25, 40, 45, 60, 75],
+      borderColor: "rgb(255, 206, 86)",
+      backgroundColor: "rgba(255, 206, 86, 0.2)",
+      tension: 0.3,
+    },
+    {
+      label: "Driver",
+      data: [15, 25, 35, 50, 65],
+      borderColor: "rgb(153, 102, 255)",
+      backgroundColor: "rgba(153, 102, 255, 0.2)",
+      tension: 0.3,
+    },
+  ],
+};
 
 export default function LandingPage() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      {/* Welcome Banner */}
-      <h1 style={{ color: '#203a43' }}>Welcome to StockLink OS</h1>
-      <p style={{ fontSize: '18px', marginTop: '10px' }}>
-        Streamlined dashboards for Admin, Contractor, Supplier, Logistics, and Driver.
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-4">StockLink OS Overview</h2>
+      <p className="mb-4">
+        A snapshot of system activity across Admin, Contractor, Supplier, Logistics, and Driver dashboards.
       </p>
-
-      {/* Quick Links */}
-      <div style={{ marginTop: '30px' }}>
-        <Link to="/admin" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Admin Dashboard</Link>
-        <Link to="/contractor" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Contractor Dashboard</Link>
-        <Link to="/supplier" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Supplier Dashboard</Link>
-        <Link to="/logistics" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Logistics Dashboard</Link>
-        <Link to="/driver" style={{ margin: '0 15px', fontSize: '16px', color: '#203a43' }}>Driver Dashboard</Link>
-      </div>
-
-      {/* Footer */}
-      <footer style={{ marginTop: '50px', fontSize: '14px', color: '#555' }}>
-        © 2026 StockLink OS — Empowering seamless operations
-      </footer>
+      <Line data={data} />
     </div>
   );
 }
