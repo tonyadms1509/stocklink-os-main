@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StockLink Ferrari Redline v110.0
 
 The high-performance operating system for the South African construction industry. Synchronizing contractors, suppliers, and logistics units through a unified neural grid.
@@ -23,3 +24,7 @@ To launch this node on the national production grid:
 
 ---
 *Precision engineered. Grid synchronized. Built for South Africa.*
+=======
+# stocklink-sa-enterprise
+Connecting Suppliers/Contractors and logistics
+>>>>>>> 256f4c43324be99cac50c5aafe8d0d541dcf0918
