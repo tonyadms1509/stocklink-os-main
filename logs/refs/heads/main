@@ -1,0 +1,150 @@
+0000000000000000000000000000000000000000 a10191aeaeb13dff9c8b9c5738b56bbd31fd41fb tonyadms1509 <tonyadams1509@gmail.com> 1769708886 +0200	commit (initial): Initial commit of StockLink app
+a10191aeaeb13dff9c8b9c5738b56bbd31fd41fb a10191aeaeb13dff9c8b9c5738b56bbd31fd41fb tonyadms1509 <tonyadams1509@gmail.com> 1769711246 +0200	Branch: renamed refs/heads/master to refs/heads/main
+a10191aeaeb13dff9c8b9c5738b56bbd31fd41fb 54cc82615a659b109680e348217139531c232f9e tonyadms1509 <tonyadams1509@gmail.com> 1770745257 +0200	commit: Ready for Netlify deployment
+54cc82615a659b109680e348217139531c232f9e 54cc82615a659b109680e348217139531c232f9e tonyadms1509 <tonyadams1509@gmail.com> 1770745459 +0200	Branch: renamed refs/heads/main to refs/heads/main
+54cc82615a659b109680e348217139531c232f9e ba5347015f77f269c64e4b7e0eaaba500946af02 tonyadms1509 <tonyadams1509@gmail.com> 1770752705 +0200	commit: Safe build script for Netlify
+ba5347015f77f269c64e4b7e0eaaba500946af02 c2e8d3fcd5d5701c5d5f4550fa144322f53e1db5 tonyadms1509 <tonyadams1509@gmail.com> 1770815392 +0200	commit: Add Netlify redirect rules for React Router
+c2e8d3fcd5d5701c5d5f4550fa144322f53e1db5 6103355c524f934441aa72621bf54687cd85f53d tonyadms1509 <tonyadams1509@gmail.com> 1770819381 +0200	commit: Set up React Router routes in index.tsx
+6103355c524f934441aa72621bf54687cd85f53d fa094afa6d6374822e51e94c6c8ae1ada791b782 tonyadms1509 <tonyadams1509@gmail.com> 1770821119 +0200	commit: Replace EnvTest with Dashboard in App.tsx
+fa094afa6d6374822e51e94c6c8ae1ada791b782 db9b52a50b5fa75e5ff80c615ba3d4ddf3f6dd3f tonyadms1509 <tonyadams1509@gmail.com> 1770821559 +0200	commit: Add StockLink dashboard layout
+db9b52a50b5fa75e5ff80c615ba3d4ddf3f6dd3f b277874ddfc550548decd0db3caba0df142c864b tonyadms1509 <tonyadams1509@gmail.com> 1770826652 +0200	commit: Wire Supplier route into index.tsx
+b277874ddfc550548decd0db3caba0df142c864b 993ef9d8b73edae7e61195d90887510dc3338b6f tonyadms1509 <tonyadams1509@gmail.com> 1770828102 +0200	commit: Add navigation links to App.tsx
+993ef9d8b73edae7e61195d90887510dc3338b6f 21289446b44ac9a4d5bef62152bcc3b25c7defb4 tonyadms1509 <tonyadams1509@gmail.com> 1770831153 +0200	commit: Add Contractor, Logistics, Admin pages and update routes
+21289446b44ac9a4d5bef62152bcc3b25c7defb4 5f5ed7681eec58e513c3e0c45b72110dd45f8662 tonyadms1509 <tonyadams1509@gmail.com> 1770840941 +0200	commit: Wire JSON data into all pages
+5f5ed7681eec58e513c3e0c45b72110dd45f8662 6982013f874b25a556d7c6408705fe0b14891165 tonyadms1509 <tonyadams1509@gmail.com> 1770987780 +0200	commit: Initial commit
+6982013f874b25a556d7c6408705fe0b14891165 6982013f874b25a556d7c6408705fe0b14891165 tonyadms1509 <tonyadams1509@gmail.com> 1770987800 +0200	Branch: renamed refs/heads/main to refs/heads/main
+6982013f874b25a556d7c6408705fe0b14891165 979e41dc1268e8b1be91e56e59c2519da3535950 tonyadms1509 <tonyadams1509@gmail.com> 1771228167 +0200	commit: Fix Vite base path for Netlify
+979e41dc1268e8b1be91e56e59c2519da3535950 f0ac845505c2a02646d16778bde08e43b3c21d81 tonyadms1509 <tonyadams1509@gmail.com> 1771231477 +0200	commit: Simplify env handling for Vite
+f0ac845505c2a02646d16778bde08e43b3c21d81 6af9d01cac8338b81c70e562f6cdfb6fb0a1a292 tonyadms1509 <tonyadams1509@gmail.com> 1771259772 +0200	commit: Add Netlify SPA redirect rule
+6af9d01cac8338b81c70e562f6cdfb6fb0a1a292 096b4f3bce23aa588eb8a5389a2a7d1ff1088655 tonyadms1509 <tonyadams1509@gmail.com> 1771264247 +0200	commit: Correct Netlify SPA redirect rule
+096b4f3bce23aa588eb8a5389a2a7d1ff1088655 8c97ec010c4cb9044ceae3fc153ac86f340be9d2 tonyadms1509 <tonyadams1509@gmail.com> 1771575041 +0200	commit: Initial commit
+8c97ec010c4cb9044ceae3fc153ac86f340be9d2 466daa548c484c7c8dd2e89e99c6f690fdd439ad tonyadms1509 <tonyadams1509@gmail.com> 1771700862 +0200	commit: Replace index.html with StockLink landing page
+466daa548c484c7c8dd2e89e99c6f690fdd439ad 2522c962583328f429f815d7fba362258c0bfe16 tonyadms1509 <tonyadams1509@gmail.com> 1771703611 +0200	commit: Add Coming Soon subscription section
+2522c962583328f429f815d7fba362258c0bfe16 a5a2fb8230057df0066a9838bfc78571157dd393 tonyadms1509 <tonyadams1509@gmail.com> 1771704537 +0200	commit: Add subscription plans section
+a5a2fb8230057df0066a9838bfc78571157dd393 9604fcd21cc4cf6dd03baaf08325125edba990e1 tonyadms1509 <tonyadams1509@gmail.com> 1771779053 +0200	commit: Add Supabase waitlist, login, and subscription buttons
+9604fcd21cc4cf6dd03baaf08325125edba990e1 815f3d2c35eee7cf67c4ef4c9bfaaa85e793eea1 tonyadms1509 <tonyadams1509@gmail.com> 1771792670 +0200	commit: Add Contractor, Supplier, Logistics, and Admin pages
+815f3d2c35eee7cf67c4ef4c9bfaaa85e793eea1 0922e7a18a75db73510245f8b1815730cfa105e6 tonyadms1509 <tonyadams1509@gmail.com> 1771828335 +0200	commit: Add Supabase key for live demo
+0922e7a18a75db73510245f8b1815730cfa105e6 f7d9b27e51defc73c8bf8966ac94324767050cfe tonyadms1509 <tonyadams1509@gmail.com> 1771829988 +0200	commit: Replace full Supabase script with corrected key
+f7d9b27e51defc73c8bf8966ac94324767050cfe 13faa1e5c54d56ccd1257c6b635b21ce736bf0de tonyadms1509 <tonyadams1509@gmail.com> 1771831557 +0200	commit: Clean Supabase script block
+13faa1e5c54d56ccd1257c6b635b21ce736bf0de 282cbc097b6b3b8fbddf09d80fd745f6683fe93b tonyadms1509 <tonyadams1509@gmail.com> 1771833353 +0200	commit: Clean bottom section of index.html
+282cbc097b6b3b8fbddf09d80fd745f6683fe93b 2e157b417ab566e3061b41d7d3b18439d6017ae9 tonyadms1509 <tonyadams1509@gmail.com> 1771835291 +0200	commit: Final clean Supabase script block
+2e157b417ab566e3061b41d7d3b18439d6017ae9 b67e69b4c4f46052617e6bcf504e0f11394dbeba tonyadms1509 <tonyadams1509@gmail.com> 1771837279 +0200	commit: Trigger redeploy with correct build settings
+b67e69b4c4f46052617e6bcf504e0f11394dbeba 1b2372053ef54e606d38914cc27a46c3f4247157 tonyadms1509 <tonyadams1509@gmail.com> 1771838389 +0200	commit: Fix Supabase import and finalize script
+1b2372053ef54e606d38914cc27a46c3f4247157 3a987936386d6ad70506ecd61ed3b7d38eaba94c tonyadms1509 <tonyadams1509@gmail.com> 1771839277 +0200	commit: Add landing page and function files
+3a987936386d6ad70506ecd61ed3b7d38eaba94c 60e14da3b4a8d286a7ad31f62db7ae883a971b1a tonyadms1509 <tonyadams1509@gmail.com> 1771842058 +0200	commit: Replace root index with landing page
+60e14da3b4a8d286a7ad31f62db7ae883a971b1a 603237046ecf421514eba179679cf67bbea757e4 tonyadms1509 <tonyadams1509@gmail.com> 1771920681 +0200	commit: Add Ferrari SL icons and updated manifest
+603237046ecf421514eba179679cf67bbea757e4 e2e763c32f4669925ec2dd0c7de37ac2c2d12f43 tonyadms1509 <tonyadams1509@gmail.com> 1771921526 +0200	commit: Fix manifest to use local Ferrari SL icons
+e2e763c32f4669925ec2dd0c7de37ac2c2d12f43 00c4c9f9a15b89d59851be4766df063a4c96c229 tonyadms1509 <tonyadams1509@gmail.com> 1771922635 +0200	commit: Fix manifest, add Ferrari SL icons, update files
+00c4c9f9a15b89d59851be4766df063a4c96c229 593b3e8cabdaba131eb35bf41cb7ba1491d96316 tonyadms1509 <tonyadams1509@gmail.com> 1771924552 +0200	commit: Fix manifest.json syntax
+593b3e8cabdaba131eb35bf41cb7ba1491d96316 d28d6e4c5d4d5ad99e6d1392f09ff8cf114e8907 tonyadms1509 <tonyadams1509@gmail.com> 1771924891 +0200	commit: Fix manifest.json syntax and structure
+d28d6e4c5d4d5ad99e6d1392f09ff8cf114e8907 ed78a67af9ad0095164d8093adc1722d6c49f659 tonyadms1509 <tonyadams1509@gmail.com> 1771926133 +0200	commit: Fix manifest icon paths and add Ferrari icons
+ed78a67af9ad0095164d8093adc1722d6c49f659 295a5b466b6bd2b489626faed9413d082ff7338a tonyadms1509 <tonyadams1509@gmail.com> 1772383030 +0200	commit: Initial commit
+295a5b466b6bd2b489626faed9413d082ff7338a fb74619206abc727e07fd563e8f4204eeaab418a tonyadms1509 <tonyadams1509@gmail.com> 1772386876 +0200	commit: Add vite react plugin dependency
+fb74619206abc727e07fd563e8f4204eeaab418a 322fa583c6b07fb4223688de746cd930f961c7f0 tonyadms1509 <tonyadams1509@gmail.com> 1772389880 +0200	commit: Add React and React DOM dependencies
+322fa583c6b07fb4223688de746cd930f961c7f0 25177fc3ed7696caad55e9f92402e988be07e178 tonyadms1509 <tonyadams1509@gmail.com> 1772392658 +0200	commit: Remove PayPalTest import and fix App.jsx
+25177fc3ed7696caad55e9f92402e988be07e178 37a85554bfec6a63415130b77310fc06abae4070 tonyadms1509 <tonyadams1509@gmail.com> 1772395751 +0200	commit: Add Netlify redirects for React routing
+37a85554bfec6a63415130b77310fc06abae4070 259c8d8da1f69fb08cd1352690e44f11fb4be0b1 tonyadms1509 <tonyadams1509@gmail.com> 1772482119 +0200	commit: Fix root package.json for Vercel build
+259c8d8da1f69fb08cd1352690e44f11fb4be0b1 259c8d8da1f69fb08cd1352690e44f11fb4be0b1 tonyadms1509 <tonyadams1509@gmail.com> 1772549553 +0200	Branch: renamed refs/heads/main to refs/heads/main
+259c8d8da1f69fb08cd1352690e44f11fb4be0b1 d5d95bfba673120b1e19f69c744fd3fb66613237 tonyadms1509 <tonyadams1509@gmail.com> 1772549706 +0200	commit: Add full StockLink app with src components
+d5d95bfba673120b1e19f69c744fd3fb66613237 d5d95bfba673120b1e19f69c744fd3fb66613237 tonyadms1509 <tonyadams1509@gmail.com> 1772555803 +0200	Branch: renamed refs/heads/main to refs/heads/main
+d5d95bfba673120b1e19f69c744fd3fb66613237 9c90537752f98d8eec74effbefa14c6154649474 tonyadms1509 <tonyadams1509@gmail.com> 1772557584 +0200	commit: Add main.jsx entry point for Vite
+9c90537752f98d8eec74effbefa14c6154649474 02e1419024e0a2ed618b2225c28cefc980e0da7e tonyadms1509 <tonyadams1509@gmail.com> 1772559204 +0200	commit: Add Vite config and fix React entry point
+02e1419024e0a2ed618b2225c28cefc980e0da7e 646bc92494e240454c2c285e2424d911e3998b79 tonyadms1509 <tonyadams1509@gmail.com> 1772560718 +0200	commit: Move PostCSS config to root for Tailwind build
+646bc92494e240454c2c285e2424d911e3998b79 5ace2d769988045d6a3606b0792904990fa46615 tonyadms1509 <tonyadams1509@gmail.com> 1772561442 +0200	commit: Add Tailwind config for build
+5ace2d769988045d6a3606b0792904990fa46615 a1a541e6be8569e8a799ace72de6be2c6fbe548d tonyadms1509 <tonyadams1509@gmail.com> 1772564508 +0200	commit: Restructure backend into Vercel API functions
+a1a541e6be8569e8a799ace72de6be2c6fbe548d 587f53fc9aeaa2ab06933726ffe9b5e921b5da22 tonyadms1509 <tonyadams1509@gmail.com> 1772567008 +0200	commit: Add complete API backend functions
+587f53fc9aeaa2ab06933726ffe9b5e921b5da22 49c25651dfd7002730efd10d11e7fed52d29bd0e tonyadms1509 <tonyadams1509@gmail.com> 1772567587 +0200	commit: Add dashboard API route
+49c25651dfd7002730efd10d11e7fed52d29bd0e e5bdc17751ee4e3752192127a5dad8f711a9f3bb tonyadms1509 <tonyadams1509@gmail.com> 1772623711 +0200	commit: Add react-router-dom dependency
+e5bdc17751ee4e3752192127a5dad8f711a9f3bb ef4241173dda36d0241baf3e319828ff8782c749 tonyadms1509 <tonyadams1509@gmail.com> 1772626217 +0200	commit: Switch to @supabase/supabase-js client
+ef4241173dda36d0241baf3e319828ff8782c749 e72af776d58256cd837904bc07236dac62a218da tonyadms1509 <tonyadams1509@gmail.com> 1772643248 +0200	commit: Add diagnostics and guard for Supabase env vars in auth.js
+e72af776d58256cd837904bc07236dac62a218da d60bdbcbfb43acf9900550418e0063dae0e73b12 tonyadms1509 <tonyadams1509@gmail.com> 1772647051 +0200	commit: Fix auth.js export and add top-level log
+d60bdbcbfb43acf9900550418e0063dae0e73b12 6b66c66b52afbebb2950d34f782658a5758c88d7 tonyadms1509 <tonyadams1509@gmail.com> 1772648206 +0200	commit: Add top-level logs and error handling to API routes
+6b66c66b52afbebb2950d34f782658a5758c88d7 3cefbddfb180beebb446293c3456ea8481fe97e2 tonyadms1509 <tonyadams1509@gmail.com> 1772650522 +0200	commit: Minimal auth.js for env var testing
+3cefbddfb180beebb446293c3456ea8481fe97e2 50ea7d568e7f1f1a1b7d77baecd951c69255157b tonyadms1509 <tonyadams1509@gmail.com> 1772653493 +0200	commit: Switch auth.js to CommonJS minimal test
+50ea7d568e7f1f1a1b7d77baecd951c69255157b aa1af435e50bc5194782be63dd5acac1c4ff2ba7 tonyadms1509 <tonyadams1509@gmail.com> 1772654630 +0200	commit: Enable ES modules and restore auth.js
+aa1af435e50bc5194782be63dd5acac1c4ff2ba7 bc63583f83e004d1e151f680125c776e3fa4d307 tonyadms1509 <tonyadams1509@gmail.com> 1772801191 +0200	commit: Updated hero landing page
+bc63583f83e004d1e151f680125c776e3fa4d307 594184eb402e22b57096aec105d6307bb2ba2631 tonyadms1509 <tonyadams1509@gmail.com> 1772802435 +0200	commit: Hero landing page in Vite entry point
+594184eb402e22b57096aec105d6307bb2ba2631 241d4e20c2eac7df27dcc5df8a5380b28f0fe3bc tonyadms1509 <tonyadams1509@gmail.com> 1772803755 +0200	commit: Added routing with Login and About pages
+241d4e20c2eac7df27dcc5df8a5380b28f0fe3bc c0dc5d19db6ce0c02bd1f06ad57b8daf3eb373ba tonyadms1509 <tonyadams1509@gmail.com> 1772808938 +0200	commit: Recovered App.jsx with role-based routing
+c0dc5d19db6ce0c02bd1f06ad57b8daf3eb373ba cc5fc972a68c4e3255ae086802ee6e1b5361a0b8 tonyadms1509 <tonyadams1509@gmail.com> 1772813654 +0200	commit: Added live dashboards with starter content
+cc5fc972a68c4e3255ae086802ee6e1b5361a0b8 b2fcd0a305581be7fc247894fced5fb9f0c8c479 tonyadms1509 <tonyadams1509@gmail.com> 1772823364 +0200	commit: Updated dashboards with tables + charts
+b2fcd0a305581be7fc247894fced5fb9f0c8c479 bb44801ba558a465e66f3fd0100b21a4d60d377c tonyadms1509 <tonyadams1509@gmail.com> 1772900082 +0200	commit: Initial Stocklink OS export
+bb44801ba558a465e66f3fd0100b21a4d60d377c bb44801ba558a465e66f3fd0100b21a4d60d377c tonyadms1509 <tonyadams1509@gmail.com> 1772900345 +0200	Branch: renamed refs/heads/main to refs/heads/main
+bb44801ba558a465e66f3fd0100b21a4d60d377c bb44801ba558a465e66f3fd0100b21a4d60d377c tonyadms1509 <tonyadams1509@gmail.com> 1772900507 +0200	Branch: renamed refs/heads/main to refs/heads/main
+bb44801ba558a465e66f3fd0100b21a4d60d377c 11d513e82d9c26bd248f6fe51af9e23e03a2692d tonyadms1509 <tonyadams1509@gmail.com> 1772907657 +0200	commit: Cleanup Ferrari placeholders, confirm React build
+11d513e82d9c26bd248f6fe51af9e23e03a2692d 66c087ec3a6ed338ecc9fcfbe6a7cc16d576a0e6 tonyadms1509 <tonyadams1509@gmail.com> 1772910244 +0200	commit: Remove Ferrari legacy placeholders
+66c087ec3a6ed338ecc9fcfbe6a7cc16d576a0e6 f429d94c12f6a5cb86cb7f61982fcd0db8bcbbcd tonyadms1509 <tonyadams1509@gmail.com> 1773072949 +0200	commit: Purge Ferrari references from codebase
+f429d94c12f6a5cb86cb7f61982fcd0db8bcbbcd f429d94c12f6a5cb86cb7f61982fcd0db8bcbbcd tonyadms1509 <tonyadams1509@gmail.com> 1773135089 +0200	Branch: renamed refs/heads/main to refs/heads/main
+f429d94c12f6a5cb86cb7f61982fcd0db8bcbbcd 221e689948daf77419cbdecbac9505d0d50f1963 tonyadms1509 <tonyadams1509@gmail.com> 1773502109 +0200	commit: Deployment 4 update: remove Ferrari branding
+221e689948daf77419cbdecbac9505d0d50f1963 fecb453e6fd4c859199f0d806788a8f53f4e9016 tonyadms1509 <tonyadams1509@gmail.com> 1773508548 +0200	commit: Add browserslist defaults
+fecb453e6fd4c859199f0d806788a8f53f4e9016 23b69581cd6938b4619f5b257aa0433fffd4e60a tonyadms1509 <tonyadams1509@gmail.com> 1773509226 +0200	commit: Fix JSON and add browserslist
+23b69581cd6938b4619f5b257aa0433fffd4e60a cff1c625c9cd4115c98adf22b93d614a1ddc32ad tonyadms1509 <tonyadams1509@gmail.com> 1773509611 +0200	commit: Switch to ES Modules for React build
+cff1c625c9cd4115c98adf22b93d614a1ddc32ad f1847cc2c838d39089f96ae5de65249e37771eca tonyadms1509 <tonyadams1509@gmail.com> 1773510627 +0200	commit: Clean package.json and fix build
+f1847cc2c838d39089f96ae5de65249e37771eca 1ef32c5a332109a007b0f6a2e75235fdbc75df9e tonyadms1509 <tonyadams1509@gmail.com> 1773512797 +0200	commit: Final clean package.json for CRA build
+1ef32c5a332109a007b0f6a2e75235fdbc75df9e 7304e13fc50020a5e3fd551c5e5b5bb8f442935b tonyadms1509 <tonyadams1509@gmail.com> 1773516143 +0200	commit: Add Deployment 4 banner, tagline, footer
+7304e13fc50020a5e3fd551c5e5b5bb8f442935b d1b2e9150ad49d2718e6bf1da39a200b1bd844e7 tonyadms1509 <tonyadams1509@gmail.com> 1773583919 +0200	commit: Fix package.json entry point and clean project structure
+d1b2e9150ad49d2718e6bf1da39a200b1bd844e7 f1526014316134f60f28b798e41574d062343a21 tonyadms1509 <tonyadams1509@gmail.com> 1773588207 +0200	commit: Keep only clean public/index.html for CRA build
+f1526014316134f60f28b798e41574d062343a21 7a02fe45db2e02ff32b8163a6f665b8509484515 tonyadms1509 <tonyadams1509@gmail.com> 1773589257 +0200	commit: Remove duplicate root index.html and keep clean public/index.html
+7a02fe45db2e02ff32b8163a6f665b8509484515 feb1a868e76cdd29389f83b4a65c6618d6d5ee5a tonyadms1509 <tonyadams1509@gmail.com> 1773591247 +0200	commit: Restore root package.json with CRA scripts and dependencies
+feb1a868e76cdd29389f83b4a65c6618d6d5ee5a c4761f42cba81c35c48c041bbe38313b921b742f tonyadms1509 <tonyadams1509@gmail.com> 1773593719 +0200	commit: Fix package.json for CRA build
+c4761f42cba81c35c48c041bbe38313b921b742f 401a2e1db3e4263ae17c818dbd1ae502f64fb430 tonyadms1509 <tonyadams1509@gmail.com> 1773594364 +0200	commit: Add react-router-dom dependency
+401a2e1db3e4263ae17c818dbd1ae502f64fb430 bd7cffaa003683e6edc602c2ac007891b2ad34ef tonyadms1509 <tonyadams1509@gmail.com> 1773594917 +0200	commit: Add chart.js dependency
+bd7cffaa003683e6edc602c2ac007891b2ad34ef 6f1330bb6f5aaf844c439a111055b977d116b3f7 tonyadms1509 <tonyadams1509@gmail.com> 1773595336 +0200	commit: Add react-chartjs-2 dependency
+6f1330bb6f5aaf844c439a111055b977d116b3f7 3d5a67c77cab64032b595b7cfc400d5dc0d6463a tonyadms1509 <tonyadams1509@gmail.com> 1773595918 +0200	commit: Add PayPal React SDK dependency
+3d5a67c77cab64032b595b7cfc400d5dc0d6463a 6563db68b2a4198b245d9d1c26663c28f1f15937 tonyadms1509 <tonyadams1509@gmail.com> 1773598709 +0200	commit: Add homepage field for CRA deployment
+6563db68b2a4198b245d9d1c26663c28f1f15937 cfc1fe46a5dcf53574544a9645eccea300a30174 tonyadms1509 <tonyadams1509@gmail.com> 1773600956 +0200	commit: Wrap App in BrowserRouter for routing
+cfc1fe46a5dcf53574544a9645eccea300a30174 c172f453fb6b5b3731bcde644e4d6345e747abb9 tonyadms1509 <tonyadams1509@gmail.com> 1773601835 +0200	commit: Fix routing with BrowserRouter basename
+c172f453fb6b5b3731bcde644e4d6345e747abb9 b8b5a11055b69a3dfc11d72aa4346faa9af6ba1b tonyadms1509 <tonyadams1509@gmail.com> 1773602845 +0200	commit: Fix rewrite destination for React Router
+b8b5a11055b69a3dfc11d72aa4346faa9af6ba1b 3a7fd10e08ec46071590d17651877cc5472f5ab3 tonyadms1509 <tonyadams1509@gmail.com> 1773606279 +0200	commit: Point rewrites to index.html
+3a7fd10e08ec46071590d17651877cc5472f5ab3 9d11788b122c4c351d387734169450d1384d8801 tonyadms1509 <tonyadams1509@gmail.com> 1773644238 +0200	commit: Fix package.json and vercel.json for Vercel deployment
+9d11788b122c4c351d387734169450d1384d8801 97617c6bae1e97a3417cbb483cdba468c5509832 tonyadms1509 <tonyadams1509@gmail.com> 1773646397 +0200	commit: Add homepage field for CRA Vercel deployment
+97617c6bae1e97a3417cbb483cdba468c5509832 fa0285eb6ae4a90f908818f9e321882d3610d067 tonyadms1509 <tonyadams1509@gmail.com> 1773666820 +0200	commit: Fix import path: use LandingPage in App.jsx
+fa0285eb6ae4a90f908818f9e321882d3610d067 fe567ac06a5e05071092243d7c69ce6235f3d3de tonyadms1509 <tonyadams1509@gmail.com> 1773667962 +0200	commit: Install @heroicons/react dependency for LandingPage
+fe567ac06a5e05071092243d7c69ce6235f3d3de dea1d5798aa73a58622587cbfee63615461b92a8 tonyadms1509 <tonyadams1509@gmail.com> 1773668258 +0200	commit: Install react-chartjs-2 and chart.js dependencies
+dea1d5798aa73a58622587cbfee63615461b92a8 7bcc6f0290467fb937fa28bb1d3c81dc77b92854 tonyadms1509 <tonyadams1509@gmail.com> 1773669070 +0200	pull origin main --rebase (finish): refs/heads/main onto a7bac7006a51373b811a104f5c894438c755ea83
+7bcc6f0290467fb937fa28bb1d3c81dc77b92854 b4f008c1e08c837befa2129be78116e74918265b tonyadms1509 <tonyadams1509@gmail.com> 1773671095 +0200	commit: Install lucide-react dependency for icons
+b4f008c1e08c837befa2129be78116e74918265b 2de714aea51b09037cf364fe816d740905ecff20 tonyadms1509 <tonyadams1509@gmail.com> 1773673923 +0200	commit: Install @paypal/react-paypal-js dependency for payment integration
+2de714aea51b09037cf364fe816d740905ecff20 dc91ac21ad5345b9e4a53b426dc82da9237e24aa tonyadms1509 <tonyadams1509@gmail.com> 1773682608 +0200	commit: Fix build errors and compile StockLink OS
+dc91ac21ad5345b9e4a53b426dc82da9237e24aa 972d61eb045a218c46c25b429cc2ccb1cc2d2994 tonyadms1509 <tonyadams1509@gmail.com> 1773687280 +0200	commit: Add vite as dev dependency
+972d61eb045a218c46c25b429cc2ccb1cc2d2994 06ef50252adc4981becaceb25f92c00760cde1ec tonyadms1509 <tonyadams1509@gmail.com> 1773688961 +0200	commit: Remove build folder from repo
+06ef50252adc4981becaceb25f92c00760cde1ec f2a20216a671268b70c35cc2cc93e192532af513 tonyadms1509 <tonyadams1509@gmail.com> 1773689647 +0200	commit: Simplify scripts for Vite deployment
+f2a20216a671268b70c35cc2cc93e192532af513 7c4cf90e98db6193616af60d75ae95f993fc29e3 tonyadms1509 <tonyadams1509@gmail.com> 1773690274 +0200	commit: Fix vercel.json and package.json separation
+7c4cf90e98db6193616af60d75ae95f993fc29e3 35f1c1ab1bc90f2ffe4b5cc7e9d0a0c230be18f9 tonyadms1509 <tonyadams1509@gmail.com> 1773720455 +0200	commit: Replace Ferrari landing with StockLink OS branding
+35f1c1ab1bc90f2ffe4b5cc7e9d0a0c230be18f9 8336224fd65040256d047eb2dbd872488bea2b8c tonyadms1509 <tonyadams1509@gmail.com> 1773721410 +0200	commit: Fix package.json syntax for Vercel build
+8336224fd65040256d047eb2dbd872488bea2b8c 76a3cd80d2efb00263a4dd1c3158cbb746b034c9 tonyadms1509 <tonyadams1509@gmail.com> 1773722993 +0200	commit: Remove CRA remnants and align with Vite
+76a3cd80d2efb00263a4dd1c3158cbb746b034c9 e86983606268498eeac635a07481433b87c050d0 tonyadms1509 <tonyadams1509@gmail.com> 1773726997 +0200	commit: Consolidate Vite config and move index.html to root
+e86983606268498eeac635a07481433b87c050d0 5cdf83a0800e9b6f5092dbf0d109b4b811ce0222 tonyadms1509 <tonyadams1509@gmail.com> 1773727489 +0200	commit: Remove duplicate vite.config.js, keep TS config
+5cdf83a0800e9b6f5092dbf0d109b4b811ce0222 5c122b075133fdf51433e5b742e2bd94dfaa8e6f tonyadms1509 <tonyadams1509@gmail.com> 1773728420 +0200	commit: Remove duplicate main.jsx, keep TypeScript entry
+5c122b075133fdf51433e5b742e2bd94dfaa8e6f 225175c58ff9f0c00e31d5134b0f04eba75d88b6 tonyadms1509 <tonyadams1509@gmail.com> 1773729606 +0200	commit: Consolidate Contractor and Logistics components to single TSX files
+225175c58ff9f0c00e31d5134b0f04eba75d88b6 a72f9ec7a28c079820b7957e136808dc2c35108b tonyadms1509 <tonyadams1509@gmail.com> 1773730505 +0200	commit: Consolidate Admin, Contractor, Supplier, Logistics into single TSX files
+a72f9ec7a28c079820b7957e136808dc2c35108b 498ac9860955a1546b13e4e7f51062ba47f198ec tonyadms1509 <tonyadams1509@gmail.com> 1773730963 +0200	commit: Standardize Admin, Contractor, Supplier, Logistics to TSX
+498ac9860955a1546b13e4e7f51062ba47f198ec 9c34f92f2dd278a7d8a1dbfefbcdaca394bd67b1 tonyadms1509 <tonyadams1509@gmail.com> 1773739467 +0200	commit: Fix index.html entry point for Vite build
+9c34f92f2dd278a7d8a1dbfefbcdaca394bd67b1 7fb26ef0841e38725fc3dc5988f78ee58922ac6f tonyadms1509 <tonyadams1509@gmail.com> 1773757221 +0200	commit: Remove Ferrari branding and update StockLink OS assets
+7fb26ef0841e38725fc3dc5988f78ee58922ac6f a42b5abc2ef8c7f4b59040b6b6d445be5d615971 tonyadms1509 <tonyadams1509@gmail.com> 1773758167 +0200	commit: Remove Ferrari branding and update StockLink OS assets
+a42b5abc2ef8c7f4b59040b6b6d445be5d615971 68a7c303323432485595d10ef81d1544e603c1d7 tonyadms1509 <tonyadams1509@gmail.com> 1773760517 +0200	commit: Remove Ferrari branding and rebuild with StockLink OS assets
+68a7c303323432485595d10ef81d1544e603c1d7 fc9d710652a613c1d56837eda26d3d53c5689ed3 tonyadms1509 <tonyadams1509@gmail.com> 1773765261 +0200	commit: Fix index.html and finalize StockLink OS branding
+fc9d710652a613c1d56837eda26d3d53c5689ed3 ba8c4442c00baf9f93049c231eb20b05bb03057d tonyadms1509 <tonyadams1509@gmail.com> 1773768325 +0200	commit: Add NavBar component for StockLink OS
+ba8c4442c00baf9f93049c231eb20b05bb03057d 8333878eca7c19c4dddade71106b3f137d31d3fe tonyadms1509 <tonyadams1509@gmail.com> 1773769877 +0200	commit: Add Supplier, Logistics, and Driver dashboards
+8333878eca7c19c4dddade71106b3f137d31d3fe 107601b7183760d41c581ac4d711e3e5ceef2723 tonyadms1509 <tonyadams1509@gmail.com> 1773771248 +0200	commit: Enhance Logistics and Driver dashboards with charts
+107601b7183760d41c581ac4d711e3e5ceef2723 5b07d8f713dbd45f6801bb5484d3c2771de87a49 tonyadms1509 <tonyadams1509@gmail.com> 1774198987 +0200	commit: Force add _redirects for Cloudflare
+5b07d8f713dbd45f6801bb5484d3c2771de87a49 212c425cb2d9dcdb0e4106cf3ecc5a57da72c350 tonyadms1509 <tonyadams1509@gmail.com> 1774199785 +0200	commit: Fix _redirects encoding (UTF-8 no BOM)
+212c425cb2d9dcdb0e4106cf3ecc5a57da72c350 ca9e7b59e642c73c3d382a40d5cf60c38777a57c tonyadms1509 <tonyadams1509@gmail.com> 1774199904 +0200	commit: Fix _redirects encoding (UTF-8 clean)
+ca9e7b59e642c73c3d382a40d5cf60c38777a57c a0ec4ba866f1a90f3690870417fbb7407b73392c tonyadms1509 <tonyadams1509@gmail.com> 1774200060 +0200	commit: Final fix: ASCII _redirects for Cloudflare
+a0ec4ba866f1a90f3690870417fbb7407b73392c bc42cc01513ee43fe42937b6383097d6e2bcbc39 tonyadms1509 <tonyadams1509@gmail.com> 1774248220 +0200	commit: Fix dependencies for Vite build
+bc42cc01513ee43fe42937b6383097d6e2bcbc39 2dd1a8be37e9b882f2dd40552473ae206e208fda tonyadms1509 <tonyadams1509@gmail.com> 1774249611 +0200	commit: Add legacy peer deps flag for build
+2dd1a8be37e9b882f2dd40552473ae206e208fda adea2aa0568f2c0ca73e6d05c9f048d425ea99c6 tonyadms1509 <tonyadams1509@gmail.com> 1774250391 +0200	commit: Fix package.json syntax error
+adea2aa0568f2c0ca73e6d05c9f048d425ea99c6 19e22098a81177a072b9483f81a97dcfadef79b1 tonyadms1509 <tonyadams1509@gmail.com> 1774251166 +0200	commit: Complete package.json fix
+19e22098a81177a072b9483f81a97dcfadef79b1 d2b402a1dff13d1276df6eeb35b36469106876c8 tonyadms1509 <tonyadams1509@gmail.com> 1774252607 +0200	commit: Force clean reinstall without cloudflare plugin
+d2b402a1dff13d1276df6eeb35b36469106876c8 b1c3743dd4a012920ab8286fda14061a6dbadb30 tonyadms1509 <tonyadams1509@gmail.com> 1774253616 +0200	commit: Add .npmrc to disable auto-installation
+b1c3743dd4a012920ab8286fda14061a6dbadb30 28eba55e753783ee33ef4a2d7957e38970ebddbf tonyadms1509 <tonyadams1509@gmail.com> 1774254093 +0200	commit: Simplify build command
+28eba55e753783ee33ef4a2d7957e38970ebddbf c8577e8f41796669fd9ce910f0855ad0baa8a142 tonyadms1509 <tonyadams1509@gmail.com> 1774254428 +0200	commit: Fix package.json syntax error
+c8577e8f41796669fd9ce910f0855ad0baa8a142 87894aecb22b97113af6d197ab56a39fbb50194f tonyadms1509 <tonyadams1509@gmail.com> 1774262690 +0200	commit: Move _redirects to root
+87894aecb22b97113af6d197ab56a39fbb50194f 6e67f27422cc57b44d9beff548dfe05d85ecff5d tonyadms1509 <tonyadams1509@gmail.com> 1774291534 +0200	commit: Remove _redirects file
+6e67f27422cc57b44d9beff548dfe05d85ecff5d 06c625bd60837876a3808a0671af9ad32b8bdb56 tonyadms1509 <tonyadams1509@gmail.com> 1774300375 +0200	commit: Delete landing page files
+06c625bd60837876a3808a0671af9ad32b8bdb56 273c60a535b0fba3a40a9fd079614045e534abe2 tonyadms1509 <tonyadams1509@gmail.com> 1774301623 +0200	commit (merge): Merge branch 'main' of https://github.com/tonyadms1509/stocklink-os-main
+273c60a535b0fba3a40a9fd079614045e534abe2 feba8786d31d8c616a01f18ccca9c8b059b7e48f tonyadms1509 <tonyadams1509@gmail.com> 1774338106 +0200	commit: Remove landing page route
+feba8786d31d8c616a01f18ccca9c8b059b7e48f ff5093791c24b27ae465a32002e310cea4b40faf tonyadms1509 <tonyadams1509@gmail.com> 1774338403 +0200	commit (merge): Merge branch 'main' of https://github.com/tonyadms1509/stocklink-os-main
+ff5093791c24b27ae465a32002e310cea4b40faf a5bbf6f5fed21246f248d7cab130af21987e97a5 tonyadms1509 <tonyadams1509@gmail.com> 1774342949 +0200	commit: Create App.tsx without landing page
+a5bbf6f5fed21246f248d7cab130af21987e97a5 0e97873392f7f930a53048d686dd2775f37d7fea tonyadms1509 <tonyadams1509@gmail.com> 1774343401 +0200	commit (merge): Merge branch 'main' of https://github.com/tonyadms1509/stocklink-os-main
+0e97873392f7f930a53048d686dd2775f37d7fea 5b56c4298b66627664e13929a6ae0e1d5be8ad77 tonyadms1509 <tonyadams1509@gmail.com> 1774368814 +0200	commit: Initial commit
+5b56c4298b66627664e13929a6ae0e1d5be8ad77 5b56c4298b66627664e13929a6ae0e1d5be8ad77 tonyadms1509 <tonyadams1509@gmail.com> 1774368816 +0200	Branch: renamed refs/heads/main to refs/heads/main
