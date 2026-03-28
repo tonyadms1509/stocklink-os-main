@@ -1,25 +1,26 @@
-# StockLink Ferrari Redline v110.0
+# StockLinkSA Enterprise v110.0
 
-The high-performance operating system for the South African construction industry. Synchronizing contractors, suppliers, and logistics units through a unified neural grid.
+A unified operating system for the South African construction industry. Connecting contractors, suppliers, and logistics units through a transparent, reliable platform.
 
-## 🚀 Deployment Ignition (Vercel)
+## 🚀 Deployment
 
-To launch this node on the national production grid:
+To launch this project on the national production grid:
 
-1. **GitHub Uplink**: Push this codebase to a private GitHub repository.
-2. **Vercel Handshake**: Import the project into Vercel.
-3. **Config Mapping**:
+1. **GitHub Repository**: Push this codebase to your GitHub repository.
+2. **Cloud Hosting**: Import the project into your preferred hosting provider (Cloudflare Pages, Render, or Vercel).
+3. **Build Settings**:
    - **Build Command**: `npx vite build`
    - **Output Directory**: `dist`
-4. **Neural Variables**: Add `API_KEY` (Gemini), `VITE_SUPABASE_URL`, and `VITE_SUPABASE_ANON_KEY` to Vercel Environment Variables.
-5. **Ignite**: Deploy and navigate to your production URL.
+4. **Environment Variables**: Add `API_KEY`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_ANON_KEY` to your hosting environment.
+5. **Deploy**: Redeploy and navigate to your production URL.
 
 ## 🛠 Features
-- **Mission HUD**: Real-time project vitals and supply chain telemetry.
-- **Neural Sourcing**: AI-driven material procurement across regional and international nodes.
-- **Structural DNA**: Visual sensory audit of site geometry and compliance (SANS 10400).
-- **Fiscal Vault**: Multi-party escrow and automated progress billing.
-- **Pilot HUD**: Ruggedized interface for logistics dispatch and delivery.
+- **Dashboard HUD**: Real-time project vitals and supply chain telemetry.
+- **Smart Sourcing**: AI-driven material procurement across regional and international nodes.
+- **Compliance Tools**: Visual audit of site geometry and compliance (SANS 10400).
+- **Financial Vault**: Multi-party escrow and automated progress billing.
+- **Logistics Dispatch**: Rugged interface for delivery and fleet management.
 
 ---
-*Precision engineered. Grid synchronized. Built for South Africa.*
+
+*Built for South Africa. Transparent, synchronized, and reliable.*
