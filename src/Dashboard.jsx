@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import OnboardingStatusCards from "./components/OnboardingStatusCards";
 import OnboardingStatusChart from "./components/OnboardingStatusChart";
 import OnboardingStatusPie from "./components/OnboardingStatusPie";
+import DealerLocationChart from "./components/DealerLocationChart";
 
 // Supabase client (use env vars)
 const supabase = createClient(
@@ -12,13 +13,9 @@ const supabase = createClient(
 
 function playOnboardingAudio(userRole, onComplete) {
   const universalAudio = new Audio("/audio/universal_welcome.mp3");
-
   let roleAudioFile = null;
-  if (userRole === "Foreman") {
-    roleAudioFile = "/audio/foreman.mp3";
-  } else if (userRole === "Admin") {
-    roleAudioFile = "/audio/admin.mp3";
-  }
+  if (userRole === "Foreman") roleAudioFile = "/audio/foreman.mp3";
+  else if (userRole === "Admin") roleAudioFile = "/audio/admin.mp3";
 
   universalAudio.play();
   universalAudio.onended = () => {
@@ -37,8 +34,9 @@ export default function Dashboard({ user }) {
   const [showPendingOnly, setShowPendingOnly] = useState(false);
   const [profiles, setProfiles] = useState([]);
   const [contractors, setContractors] = useState([]);
+  const [dealers, setDealers] = useState([]);
+  const [counts, setCounts] = useState({ profiles: 0, contractors: 0, dealers: 0 });
 
-  // Fallback user if Supabase fails
   const fallbackUser = {
     id: 0,
     name: "Demo User",
@@ -46,50 +44,49 @@ export default function Dashboard({ user }) {
     role: "Admin",
     hasHeardIntro: false,
   };
-
   const activeUser = user || fallbackUser;
 
   useEffect(() => {
-    // Fetch profiles
     async function fetchProfiles() {
-      const { data, error } = await supabase.from("profiles").select("*");
-      if (error) {
-        console.error("Supabase profiles error:", error.message);
-        setProfiles([fallbackUser]);
-      } else {
-        setProfiles(data);
-      }
+      const { data } = await supabase.from("profiles").select("*");
+      setProfiles(data || []);
     }
-
-    // Fetch contractors
     async function fetchContractors() {
-      const { data, error } = await supabase.from("contractors").select("*");
-      if (error) {
-        console.error("Supabase contractors error:", error.message);
-        setContractors([]);
-      } else {
-        setContractors(data);
-      }
+      const { data } = await supabase.from("contractors").select("*");
+      setContractors(data || []);
     }
-
+    async function fetchDealers() {
+      const { data } = await supabase.from("dealers").select("*");
+      setDealers(data || []);
+    }
+    async function fetchCounts() {
+      const { count: profilesCount } = await supabase
+        .from("profiles")
+        .select("*", { count: "exact", head: true });
+      const { count: contractorsCount } = await supabase
+        .from("contractors")
+        .select("*", { count: "exact", head: true });
+      const { count: dealersCount } = await supabase
+        .from("dealers")
+        .select("*", { count: "exact", head: true });
+      setCounts({
+        profiles: profilesCount || 0,
+        contractors: contractorsCount || 0,
+        dealers: dealersCount || 0,
+      });
+    }
     fetchProfiles();
     fetchContractors();
+    fetchDealers();
+    fetchCounts();
   }, []);
 
   useEffect(() => {
     if (activeUser && !activeUser.hasHeardIntro && !hasPlayedIntro) {
       playOnboardingAudio(activeUser.role, async () => {
-        try {
-          await supabase
-            .from("profiles")
-            .update({ hasHeardIntro: true })
-            .eq("id", activeUser.id);
-
-          activeUser.hasHeardIntro = true;
-          setHasPlayedIntro(true);
-        } catch (err) {
-          console.error("Supabase update failed:", err.message);
-        }
+        await supabase.from("profiles").update({ hasHeardIntro: true }).eq("id", activeUser.id);
+        activeUser.hasHeardIntro = true;
+        setHasPlayedIntro(true);
       });
     }
   }, [activeUser, hasPlayedIntro]);
@@ -98,21 +95,13 @@ export default function Dashboard({ user }) {
     <div className="bg-carbon min-h-screen p-6">
       {/* Welcome section */}
       <div className="holographic-glass max-w-4xl mx-auto p-8 rounded-lg border-glow-red text-center mb-8">
-        <h2 className="text-3xl font-bold text-glow-red mb-4">
-          Welcome to StockLinkSA
-        </h2>
+        <h2 className="text-3xl font-bold text-glow-red mb-4">Welcome to StockLinkSA</h2>
+        <p className="text-white mb-6">You’re now authenticated and inside the dashboard 🚀</p>
         <p className="text-white mb-6">
-          You’re now authenticated and inside the dashboard 🚀
+          Logged in as: {activeUser.name || activeUser.email} (Role: {activeUser.role})
         </p>
-        <p className="text-white mb-6">
-          Logged in as: {activeUser.name || activeUser.email} (Role:{" "}
-          {activeUser.role})
-        </p>
-
         <button
-          onClick={() =>
-            playOnboardingAudio(activeUser?.role || "Universal", () => {})
-          }
+          onClick={() => playOnboardingAudio(activeUser?.role || "Universal", () => {})}
           className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
         >
           Replay Introduction
@@ -132,34 +121,12 @@ export default function Dashboard({ user }) {
       {/* Profiles table */}
       <div className="holographic-glass max-w-4xl mx-auto p-6 rounded-lg border-glow-red mb-8">
         <h3 className="text-xl font-bold text-glow-red mb-4">Profiles</h3>
-        {profiles.length === 0 ? (
-          <p className="text-white">No profiles found.</p>
-        ) : (
+        {profiles.length === 0 ? <p className="text-white">No profiles found.</p> : (
           <table className="w-full text-white border-collapse">
-            <thead>
-              <tr>
-                <th className="border-b border-gray-600 p-2">ID</th>
-                <th className="border-b border-gray-600 p-2">Name</th>
-                <th className="border-b border-gray-600 p-2">Email</th>
-                <th className="border-b border-gray-600 p-2">Role</th>
-              </tr>
-            </thead>
-            <tbody>
-              {profiles.map((p) => (
-                <tr key={p.id}>
-                  <td className="border-b border-gray-700 p-2">{p.id}</td>
-                  <td className="border-b border-gray-700 p-2">
-                    {p.name || "N/A"}
-                  </td>
-                  <td className="border-b border-gray-700 p-2">
-                    {p.email || "N/A"}
-                  </td>
-                  <td className="border-b border-gray-700 p-2">
-                    {p.role || "N/A"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr></thead>
+            <tbody>{profiles.map(p => (
+              <tr key={p.id}><td>{p.id}</td><td>{p.name}</td><td>{p.email}</td><td>{p.role}</td></tr>
+            ))}</tbody>
           </table>
         )}
       </div>
@@ -167,40 +134,36 @@ export default function Dashboard({ user }) {
       {/* Contractors table */}
       <div className="holographic-glass max-w-4xl mx-auto p-6 rounded-lg border-glow-red mb-8">
         <h3 className="text-xl font-bold text-glow-red mb-4">Contractors</h3>
-        {contractors.length === 0 ? (
-          <p className="text-white">No contractors found.</p>
-        ) : (
+        {contractors.length === 0 ? <p className="text-white">No contractors found.</p> : (
           <table className="w-full text-white border-collapse">
-            <thead>
-              <tr>
-                <th className="border-b border-gray-600 p-2">ID</th>
-                <th className="border-b border-gray-600 p-2">Name</th>
-                <th className="border-b border-gray-600 p-2">Role</th>
-              </tr>
-            </thead>
-            <tbody>
-              {contractors.map((c) => (
-                <tr key={c.id}>
-                  <td className="border-b border-gray-700 p-2">{c.id}</td>
-                  <td className="border-b border-gray-700 p-2">
-                    {c.name || "N/A"}
-                  </td>
-                  <td className="border-b border-gray-700 p-2">
-                    {c.role || "N/A"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            <thead><tr><th>ID</th><th>Name</th><th>Role</th></tr></thead>
+            <tbody>{contractors.map(c => (
+              <tr key={c.id}><td>{c.id}</td><td>{c.name}</td><td>{c.role}</td></tr>
+            ))}</tbody>
           </table>
         )}
       </div>
 
-      {/* Two-column layout */}
+      {/* Dealers table */}
+      <div className="holographic-glass max-w-4xl mx-auto p-6 rounded-lg border-glow-red mb-8">
+        <h3 className="text-xl font-bold text-glow-red mb-4">Dealers</h3>
+        {dealers.length === 0 ? <p className="text-white">No dealers found.</p> : (
+          <table className="w-full text-white border-collapse">
+            <thead><tr><th>ID</th><th>Name</th><th>Location</th></tr></thead>
+            <tbody>{dealers.map(d => (
+              <tr key={d.id}><td>{d.id}</td><td>{d.name}</td><td>{d.location}</td></tr>
+            ))}</tbody>
+          </table>
+        )}
+      </div>
+
+      {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <OnboardingStatusCards showPendingOnly={showPendingOnly} />
         <div className="space-y-8">
-          <OnboardingStatusChart />
-          <OnboardingStatusPie />
+          <OnboardingStatusChart counts={counts} />
+          <OnboardingStatusPie counts={counts} />
+          <DealerLocationChart />
         </div>
       </div>
     </div>
