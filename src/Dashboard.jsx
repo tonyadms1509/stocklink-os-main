@@ -36,6 +36,7 @@ export default function Dashboard({ user }) {
   const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
   const [showPendingOnly, setShowPendingOnly] = useState(false);
   const [profiles, setProfiles] = useState([]);
+  const [contractors, setContractors] = useState([]);
 
   // Fallback user if Supabase fails
   const fallbackUser = {
@@ -49,17 +50,30 @@ export default function Dashboard({ user }) {
   const activeUser = user || fallbackUser;
 
   useEffect(() => {
-    // Fetch all profiles from Supabase
+    // Fetch profiles
     async function fetchProfiles() {
       const { data, error } = await supabase.from("profiles").select("*");
       if (error) {
-        console.error("Supabase error:", error.message);
-        setProfiles([fallbackUser]); // fallback if query fails
+        console.error("Supabase profiles error:", error.message);
+        setProfiles([fallbackUser]);
       } else {
         setProfiles(data);
       }
     }
+
+    // Fetch contractors
+    async function fetchContractors() {
+      const { data, error } = await supabase.from("contractors").select("*");
+      if (error) {
+        console.error("Supabase contractors error:", error.message);
+        setContractors([]);
+      } else {
+        setContractors(data);
+      }
+    }
+
     fetchProfiles();
+    fetchContractors();
   }, []);
 
   useEffect(() => {
@@ -115,7 +129,7 @@ export default function Dashboard({ user }) {
         </button>
       </div>
 
-      {/* Multi-row display */}
+      {/* Profiles table */}
       <div className="holographic-glass max-w-4xl mx-auto p-6 rounded-lg border-glow-red mb-8">
         <h3 className="text-xl font-bold text-glow-red mb-4">Profiles</h3>
         {profiles.length === 0 ? (
@@ -150,6 +164,37 @@ export default function Dashboard({ user }) {
         )}
       </div>
 
+      {/* Contractors table */}
+      <div className="holographic-glass max-w-4xl mx-auto p-6 rounded-lg border-glow-red mb-8">
+        <h3 className="text-xl font-bold text-glow-red mb-4">Contractors</h3>
+        {contractors.length === 0 ? (
+          <p className="text-white">No contractors found.</p>
+        ) : (
+          <table className="w-full text-white border-collapse">
+            <thead>
+              <tr>
+                <th className="border-b border-gray-600 p-2">ID</th>
+                <th className="border-b border-gray-600 p-2">Name</th>
+                <th className="border-b border-gray-600 p-2">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contractors.map((c) => (
+                <tr key={c.id}>
+                  <td className="border-b border-gray-700 p-2">{c.id}</td>
+                  <td className="border-b border-gray-700 p-2">
+                    {c.name || "N/A"}
+                  </td>
+                  <td className="border-b border-gray-700 p-2">
+                    {c.role || "N/A"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+
       {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <OnboardingStatusCards showPendingOnly={showPendingOnly} />
@@ -161,4 +206,3 @@ export default function Dashboard({ user }) {
     </div>
   );
 }
-
