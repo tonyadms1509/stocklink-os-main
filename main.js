@@ -1,1 +1,1 @@
-﻿console.log('StockLink SA initialized');
+console.log('StockLink SA initialized');
