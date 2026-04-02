@@ -4,6 +4,7 @@ import OnboardingStatusCards from "./components/OnboardingStatusCards";
 import OnboardingStatusChart from "./components/OnboardingStatusChart";
 import OnboardingStatusPie from "./components/OnboardingStatusPie";
 import DealerLocationChart from "./components/DealerLocationChart";
+import DealerLocationPie from "./components/DealerLocationPie";
 
 // Supabase client (use env vars)
 const supabase = createClient(
@@ -164,6 +165,7 @@ export default function Dashboard({ user }) {
           <OnboardingStatusChart counts={counts} />
           <OnboardingStatusPie counts={counts} />
           <DealerLocationChart />
+          <DealerLocationPie />
         </div>
       </div>
     </div>
