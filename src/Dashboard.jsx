@@ -4,7 +4,7 @@ import OnboardingStatusCards from "./components/OnboardingStatusCards";
 import OnboardingStatusChart from "./components/OnboardingStatusChart";
 import OnboardingStatusPie from "./components/OnboardingStatusPie";
 
-// Supabase client (use env vars instead of hardcoding keys)
+// Supabase client (use env vars)
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -36,27 +36,34 @@ export default function Dashboard({ user }) {
   const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
   const [showPendingOnly, setShowPendingOnly] = useState(false);
 
-  useEffect(() => {
-    if (user && !user.hasHeardIntro && !hasPlayedIntro) {
-      playOnboardingAudio(user.role, async () => {
-        await supabase
-          .from("profiles") // ✅ update to match your table
-          .update({ hasHeardIntro: true })
-          .eq("id", user.id);
+  // Fallback user if Supabase fails
+  const fallbackUser = {
+    id: 0,
+    name: "Demo User",
+    email: "demo@stocklinksa.co.za",
+    role: "Admin",
+    hasHeardIntro: false,
+  };
 
-        user.hasHeardIntro = true;
-        setHasPlayedIntro(true);
+  const activeUser = user || fallbackUser;
+
+  useEffect(() => {
+    if (activeUser && !activeUser.hasHeardIntro && !hasPlayedIntro) {
+      playOnboardingAudio(activeUser.role, async () => {
+        try {
+          await supabase
+            .from("profiles") // ✅ update to match your table
+            .update({ hasHeardIntro: true })
+            .eq("id", activeUser.id);
+
+          activeUser.hasHeardIntro = true;
+          setHasPlayedIntro(true);
+        } catch (err) {
+          console.error("Supabase update failed:", err.message);
+        }
       });
     }
-  }, [user, hasPlayedIntro]);
-
-  if (!user) {
-    return (
-      <div className="bg-carbon min-h-screen p-6 text-center text-white">
-        Loading user data...
-      </div>
-    );
-  }
+  }, [activeUser, hasPlayedIntro]);
 
   return (
     <div className="bg-carbon min-h-screen p-6">
@@ -69,13 +76,13 @@ export default function Dashboard({ user }) {
           You’re now authenticated and inside the dashboard 🚀
         </p>
         <p className="text-white mb-6">
-          Logged in as: {user.name || user.email || "Unknown User"} (Role:{" "}
-          {user.role || "N/A"})
+          Logged in as: {activeUser.name || activeUser.email} (Role:{" "}
+          {activeUser.role})
         </p>
 
         <button
           onClick={() =>
-            playOnboardingAudio(user?.role || "Universal", () => {})
+            playOnboardingAudio(activeUser?.role || "Universal", () => {})
           }
           className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
         >
@@ -107,3 +114,4 @@ export default function Dashboard({ user }) {
     </div>
   );
 }
+
