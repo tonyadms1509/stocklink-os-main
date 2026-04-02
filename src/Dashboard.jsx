@@ -4,9 +4,10 @@ import OnboardingStatusCards from "./components/OnboardingStatusCards";
 import OnboardingStatusChart from "./components/OnboardingStatusChart";
 import OnboardingStatusPie from "./components/OnboardingStatusPie";
 
+// Supabase client (use env vars instead of hardcoding keys)
 const supabase = createClient(
-  "https://adiwffecdtcjodxlmvjz.supabase.co",
-  "your-public-anon-key"
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
 function playOnboardingAudio(userRole, onComplete) {
@@ -39,8 +40,8 @@ export default function Dashboard({ user }) {
     if (user && !user.hasHeardIntro && !hasPlayedIntro) {
       playOnboardingAudio(user.role, async () => {
         await supabase
-          .from("users")
-          .update({ has_heard_intro: true })
+          .from("profiles") // ✅ update to match your table
+          .update({ hasHeardIntro: true })
           .eq("id", user.id);
 
         user.hasHeardIntro = true;
@@ -48,6 +49,14 @@ export default function Dashboard({ user }) {
       });
     }
   }, [user, hasPlayedIntro]);
+
+  if (!user) {
+    return (
+      <div className="bg-carbon min-h-screen p-6 text-center text-white">
+        Loading user data...
+      </div>
+    );
+  }
 
   return (
     <div className="bg-carbon min-h-screen p-6">
@@ -58,6 +67,10 @@ export default function Dashboard({ user }) {
         </h2>
         <p className="text-white mb-6">
           You’re now authenticated and inside the dashboard 🚀
+        </p>
+        <p className="text-white mb-6">
+          Logged in as: {user.name || user.email || "Unknown User"} (Role:{" "}
+          {user.role || "N/A"})
         </p>
 
         <button
@@ -94,4 +107,3 @@ export default function Dashboard({ user }) {
     </div>
   );
 }
-
