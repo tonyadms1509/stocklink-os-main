@@ -37,6 +37,7 @@ export default function Dashboard({ user }) {
   const [contractors, setContractors] = useState([]);
   const [dealers, setDealers] = useState([]);
   const [counts, setCounts] = useState({ profiles: 0, contractors: 0, dealers: 0 });
+  const [showDealerPie, setShowDealerPie] = useState(false); // NEW toggle state
 
   const fallbackUser = {
     id: 0,
@@ -110,12 +111,18 @@ export default function Dashboard({ user }) {
       </div>
 
       {/* Toggle filter */}
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-6 space-x-4">
         <button
           onClick={() => setShowPendingOnly(!showPendingOnly)}
           className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
         >
           {showPendingOnly ? "Show All Roles" : "Show Pending Only"}
+        </button>
+        <button
+          onClick={() => setShowDealerPie(!showDealerPie)}
+          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+        >
+          {showDealerPie ? "Show Dealer Bar Chart" : "Show Dealer Pie Chart"}
         </button>
       </div>
 
@@ -164,8 +171,7 @@ export default function Dashboard({ user }) {
         <div className="space-y-8">
           <OnboardingStatusChart counts={counts} />
           <OnboardingStatusPie counts={counts} />
-          <DealerLocationChart />
-          <DealerLocationPie />
+          {showDealerPie ? <DealerLocationPie /> : <DealerLocationChart />}
         </div>
       </div>
     </div>
