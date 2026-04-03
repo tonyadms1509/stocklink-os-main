@@ -1,27 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import Dashboard from "./Dashboard";
 import { UserProvider } from "./UserContext";
 
-// Initialize Supabase client using environment variables
+// Supabase client
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
 export default function App() {
-  const mockUser = {
-    id: 1,
-    role: "Admin",
-    hasHeardIntro: false,
-  };
+  const [user, setUser] = useState(null);
 
-  // Test Supabase connection on first render
   useEffect(() => {
-    async function testSupabase() {
+    async function fetchUser() {
       const { data, error } = await supabase
-        .from("your_table_name") // 🔑 replace with a real table in Supabase (e.g., "profiles" or "products")
+        .from("profiles")   // ✅ using your real table
         .select("*")
         .limit(1);
 
@@ -29,18 +24,22 @@ export default function App() {
         console.error("Supabase error:", error.message);
       } else {
         console.log("Supabase data:", data);
+        if (data && data.length > 0) {
+          setUser(data[0]); // take the first row
+        }
       }
     }
-    testSupabase();
+    fetchUser();
   }, []);
 
   return (
     <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard user={mockUser} />} />
+          <Route path="/" element={<Dashboard user={user} />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
   );
 }
+
