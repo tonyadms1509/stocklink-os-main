@@ -12,39 +12,19 @@ const supabase = createClient(
   import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
-function playOnboardingAudio(userRole, onComplete) {
-  const universalAudio = new Audio("/audio/universal_welcome.mp3");
-  let roleAudioFile = null;
-  if (userRole === "Foreman") roleAudioFile = "/audio/foreman.mp3";
-  else if (userRole === "Admin") roleAudioFile = "/audio/admin.mp3";
-
-  universalAudio.play();
-  universalAudio.onended = () => {
-    if (roleAudioFile) {
-      const roleAudio = new Audio(roleAudioFile);
-      roleAudio.play();
-      roleAudio.onended = onComplete;
-    } else {
-      onComplete();
-    }
-  };
-}
-
 export default function Dashboard({ user }) {
-  const [hasPlayedIntro, setHasPlayedIntro] = useState(false);
   const [showPendingOnly, setShowPendingOnly] = useState(false);
   const [profiles, setProfiles] = useState([]);
   const [contractors, setContractors] = useState([]);
   const [dealers, setDealers] = useState([]);
   const [counts, setCounts] = useState({ profiles: 0, contractors: 0, dealers: 0 });
-  const [showDealerPie, setShowDealerPie] = useState(false); // NEW toggle state
+  const [showDealerPie, setShowDealerPie] = useState(false);
 
   const fallbackUser = {
     id: 0,
     name: "Demo User",
     email: "demo@stocklinksa.co.za",
     role: "Admin",
-    hasHeardIntro: false,
   };
   const activeUser = user || fallbackUser;
 
@@ -83,34 +63,9 @@ export default function Dashboard({ user }) {
     fetchCounts();
   }, []);
 
-  useEffect(() => {
-    if (activeUser && !activeUser.hasHeardIntro && !hasPlayedIntro) {
-      playOnboardingAudio(activeUser.role, async () => {
-        await supabase.from("profiles").update({ hasHeardIntro: true }).eq("id", activeUser.id);
-        activeUser.hasHeardIntro = true;
-        setHasPlayedIntro(true);
-      });
-    }
-  }, [activeUser, hasPlayedIntro]);
-
   return (
     <div className="bg-carbon min-h-screen p-6">
-      {/* Welcome section */}
-      <div className="holographic-glass max-w-4xl mx-auto p-8 rounded-lg border-glow-red text-center mb-8">
-        <h2 className="text-3xl font-bold text-glow-red mb-4">Welcome to StockLinkSA</h2>
-        <p className="text-white mb-6">You’re now authenticated and inside the dashboard 🚀</p>
-        <p className="text-white mb-6">
-          Logged in as: {activeUser.name || activeUser.email} (Role: {activeUser.role})
-        </p>
-        <button
-          onClick={() => playOnboardingAudio(activeUser?.role || "Universal", () => {})}
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
-        >
-          Replay Introduction
-        </button>
-      </div>
-
-      {/* Toggle filter */}
+      {/* Toggle filter + chart toggle */}
       <div className="flex justify-center mb-6 space-x-4">
         <button
           onClick={() => setShowPendingOnly(!showPendingOnly)}
